@@ -28,3 +28,13 @@ To run the Survivor API, you need the following prerequisites:
 
    ```bash
    git clone https://github.com/rgradison/survivor-api.git
+1.Navigate to the project directory:
+===
+    cd survivor-api
+2.Build the project using Maven:
+===
+    mvn clean install
+3.Run the application:
+===
+java -jar target/survivor-api-1.0.0.jar
+
