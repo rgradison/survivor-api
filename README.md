@@ -7,8 +7,9 @@ The Survivor API is a RESTful web service for managing information about survivo
     - [Prerequisites](#prerequisites)
     - [Installation](#installation)
 - [Usage](#usage)
-    - [Endpoints](#endpoints)
-    - [API Documentation](#api-documentation)
+  - [Endpoints](#endpoints)
+  - [Sample Request](#Post Request Response)
+  - [API Documentation](#api-documentation)
 - [Configuration](#configuration)
 - [Contributing](#contributing)
 
@@ -27,7 +28,6 @@ To run the Survivor API, you need the following prerequisites:
 ### Installation
 
 1. Clone this repository to your local machine:
-
    ```bash
    git clone https://github.com/rgradison/survivor-api.git
 1.Navigate to the project directory:
@@ -56,6 +56,48 @@ http://localhost:8080.
 - Reports: Retrieve various reports on survivors and robots, including percentages of infected survivors and lists of infected/non-infected survivors and robots.
 
 - List of Robots: Fetch the list of robots and their known locations from an external source. (GET /api/reports/robots)
+
+## Post Request Response
+### Request
+
+{
+  "name": "John Doe",
+  "age": 30,
+  "gender": "Male",
+   "survivorId":"123400812",
+  "lastLocation": {
+    "latitude": 40.7128,
+    "longitude": -74.0060
+  },
+  "resources": {
+    "WATER": 5,
+    "FOOD": 10,
+    "MEDICATION": 3,
+    "AMMUNITION": 50
+  }
+}
+### Response
+
+### status: 200 OK
+
+{
+"id": 5,
+"name": "John Doe",
+"age": 30,
+"gender": "Male",
+"lastLocation": {
+"latitude": 40.7128,
+"longitude": -74.006
+},
+"resources": {
+"WATER": 5,
+"FOOD": 10,
+"MEDICATION": 3,
+"AMMUNITION": 50
+},
+"survivorId": "123400812",
+"infected": false
+}
 
 ## API Documentation
 You can access the API documentation by visiting http://localhost:8080/swagger-ui.html after starting the application. The interactive Swagger documentation provides details about the available endpoints and allows you to test them.
